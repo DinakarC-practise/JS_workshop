@@ -248,3 +248,189 @@
 * Functions Statements and Expressions
 */
 
+//  Function Declararion
+
+//  syntax : function whatDoYouDo (job, firstName){}
+
+
+// Function Expresssion
+
+// var whatDoYouDo = function (job, firstName){
+//     switch (job){
+//         case 'teacher':
+//             return firstName + ' teaches something';
+//             case 'driver':
+//                 return firstName + ' drives something';
+//                 case 'artist':
+//                     return firstName + ' does some art work';
+//                     default:
+//     }
+// }
+
+// console.log (whatDoYouDo('driver', 'John' ));
+
+/****************************************** 
+* Arrays = collection of variables
+*/
+
+// syntax  var names = ['John', 'King', 'Jane'] or var arr = new array ['56', '67', '78' ]
+
+// var names = ['John', 'King', 'Jane']
+
+// console.log(names);
+
+// // mutated array
+// names[1] = 'Ben'
+// names[names.length] = 'mary';
+// console.log(names);
+
+
+// // Differnet data types
+
+
+// var f = ['Dex', 'Smith', 1992, 'teacher', 'false']
+
+// console.log(f)
+// // adds end of the array
+// f.push('juul');
+// // add starting in the array
+// f.unshift('kill')
+// // removes last array
+// f.pop();
+// // removes starting array
+// f.shift();
+
+// console.log(f);
+
+// f.indexOf(1992)
+// // this value is not present in the arrat=y so it return the value '-1'
+// f.indexOf('Chan')
+
+/* Coding challange */
+
+// var bill1 = 124;
+// var bill2 = 48; 
+// var bill3 = 268;
+// var tipAmount = []
+// var totalAmount = []
+
+// function tipCalculator(bill){
+//     if (bill < 50 ){
+//         return bill * 0.2
+//     } else if (bill >= 50 && bill < 200 ){
+//         return bill * .15
+//     } else if (bill > 200){
+//         return bill * .1
+//     } else {
+//         return 'For this ' + bill + ' amount no tip required'
+//     }
+// }
+
+// // sample shown in the video. 
+// // var bills = [ 124, 48, 268];
+// // var tips = [tipCalculator(bills[0]), tipCalculator(bills[1]), tipCalculator(bills[2])]
+
+// // console.log(totalAmount);
+
+// tipAmount.push(tipCalculator(bill1));
+// tipAmount.push(tipCalculator(bill2));
+// tipAmount.push(tipCalculator(bill3));
+
+// console.log('Array of tips only : ' + tipAmount);
+
+// totalAmount.push(tipAmount[0] + bill1)
+// totalAmount.push(tipAmount[1] + bill2)
+// totalAmount.push(tipAmount[2] + bill3)
+
+// console.log('Array of tip + bill amount : ' + totalAmount);
+
+/* 
+* Object and Properties
+*/
+ // Object literal
+// var john = {
+//     firstName : 'John',
+//     lastName : 'Smith',
+//     birthYear : '1992',
+//     family : [ 'Jane', 'Mark', 'King', 'Queen'],
+//     job: 'Sex addict',
+//     isMarried : false
+// }
+
+// console.log(john);
+// var x = 'birthYear';
+// console.log(john[x]);
+
+// // Mutation
+// john.job = 'kicker';
+// john['isMarried'] = true;
+
+// console.log(john);
+//  // new object syntax
+// var jane = new Object();
+// jane.firstName = 'Jane';
+// jane.lastname = 'Smith';
+// jane['birthYear'] = 1995;
+// console.log(jane);
+
+
+/* 
+* Object and Methods
+*/
+
+// var john = {
+//     firstName : 'John',
+//     lastName : 'Smith',
+//     birthYear : 1992,
+//     family : [ 'Jane', 'Mark', 'King', 'Queen'],
+//     job: 'Sex addict',
+//     isMarried : false,
+//     // calcAge : function (birthYear) {
+//     //     return 2018 - birthYear;
+//     // }
+//     // OR
+//     calcAge : function () {
+//         this.age =  2018 - this.birthYear;
+//     }    
+// };
+
+// console.log(john)
+// console.log(john.family);
+
+// john.family.push('Amber');
+// console.log(john.family);
+
+// john.calcAge();
+// console.log(john)
+
+//  Coding challange
+
+
+var john = {
+    firstName : 'John',
+    lastName : 'Smith',
+    mass : 89,
+    height : 167,
+    calcBMI : function (){
+        this.BMI = this.mass / (this.height * this.height);
+        return this.BMI
+    }
+}
+var mark = {
+    firstName : 'Mark',
+    lastName : 'Smith',
+    mass : 89,
+    height : 167,
+    calcBMI : function (){
+        this.BMI = this.mass / (this.height * this.height)
+        return this.BMI
+    }
+}
+
+// condition ? exprIfTrue : exprIfFalse
+
+john.calcBMI() > mark.calcBMI() ? console.log('John\'s BMI is higher than Mark\'s') 
+: john.calcBMI() === mark.calcBMI() ? console.log('John\'s BMI is equal to Mark\'s') 
+: console.log('John\'s BMI is lower than Mark\'s')
+
+console.log(john.calcBMI)
